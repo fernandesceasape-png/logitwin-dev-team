@@ -21,5 +21,5 @@ Desenvolver o MVP visual que consuma nossa estrutura de dados padrão.
 
 ## 👥 Governança
 - **Product Owner:** Tarcísio Fernandes
-- **Mentoria:** Rafael Rodrigues (Mentor Porto Digital)
+- **Mentoria:** Rafael Rodrigues
 - **Comunicação:** Discord (Quintas, 11:10 - 11:40)
