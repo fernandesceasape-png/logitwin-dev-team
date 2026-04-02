@@ -20,6 +20,6 @@ Desenvolver o MVP visual que consuma nossa estrutura de dados padrão.
 ---
 
 ## 👥 Governança
-- **Product Owner:** Tarcísio (Coordenador SAP)
-- **Mentoria:** Porto Digital
+- **Product Owner:** Tarcísio Fernandes
+- **Mentoria:** Rafael Rodrigues (Mentor Porto Digital)
 - **Comunicação:** Discord (Quintas, 11:10 - 11:40)
