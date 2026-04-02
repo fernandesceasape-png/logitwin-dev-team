@@ -1,30 +1,25 @@
-# logitwin-dev-team
-Development repository for the LogiTwin MVP - Porto Digital Residency.
-# LogiTwin - Residency Development Repo
+# 🚢 LogiTwin - Repositório de Desenvolvimento (Residência Porto Digital)
 
-## 📌 Project Overview
-LogiTwin is a Digital Twin solution designed to optimize SAP-based logistics operations. This repository is dedicated to the development of the simulation engine and user interface.
+Bem-vindos à squad de desenvolvimento da **LogiTwin**! Este é o espaço onde transformaremos dados logísticos complexos em uma interface de Gêmeo Digital de alto impacto.
 
-## 🛠 Tech Stack
-* **Backend:** Python (to be used for simulation logic)
-* **Frontend:** React.js / Next.js
-* **Data Format:** JSON / CSV (Standardized Event Logs)
+---
 
-## 🏗 Project Structure
-This repository focuses on two main modules:
+## 🏆 Sobre o Projeto
+O LogiTwin é uma solução de Gêmeo Digital validada pelo **Programa Centelha (Nota 4,20)** e acelerada globalmente pela **Fundação Wadhwani (Ignite)**. Nosso foco é otimizar pátios logísticos integrando inteligência de dados SAP.
 
-### 1. Simulation Engine (`/simulation-engine`)
-* Development of the "What-if" logic to simulate logistics scenarios.
-* Transformation of standardized data into performance metrics (KPIs).
+## 🎯 Objetivo da Squad (Sprint 1)
+Desenvolver o MVP visual que consuma nossa estrutura de dados padrão.
+- **Back-end:** Criar API para leitura de arquivos JSON.
+- **Front-end:** Dashboard para visualização de cargas e containers.
+- **Dados:** Mapeamento das tabelas SAP `VBAK`, `LIPS` e `VEKP`.
 
-### 2. Frontend Dashboard (`/frontend-dashboard`)
-* Visualization of the logistics flow.
-* Alerts and simulation control panel.
+## 📂 Recursos Disponíveis
+- [Link para o Google Drive de Requisitos](COLE_AQUI_O_LINK_DO_SEU_DRIVE)
+- Arquivo de Mock: `logitwin_sample_data.json` (disponível na pasta /data)
 
-## 📁 Data Pipeline
-The infrastructure for data extraction from ERP systems is managed by our **Internal Infrastructure Core**. Standardized data samples will be provided periodically in the `/data-samples` folder for development purposes.
+---
 
-## 🔐 Rules of Engagement
-* **Intellectual Property:** All code developed here belongs exclusively to the LogiTwin project.
-* **Communication:** All technical queries must be addressed directly to the Project Founder (Tarcisio Fernandes).
-* **Security:** Do not upload any personal data or credentials to this repository.
+## 👥 Governança
+- **Product Owner:** Tarcísio (Coordenador SAP)
+- **Mentoria:** Porto Digital
+- **Comunicação:** Discord (Quintas, 11:10 - 11:40)
