@@ -1,0 +1,49 @@
+{
+  "sap_data_dump": {
+    "vbak_header": [
+      {
+        "vbeln": "0010023456",
+        "erdat": "2024-03-10",
+        "kunnr": "PORTO_SUAPE_OPERADORA_A",
+        "vstel": "GATE_01",
+        "waerk": "BRL"
+      }
+    ],
+    "lips_items": [
+      {
+        "vbeln_delivery": "0080099887",
+        "vgbel_order": "0010023456",
+        "matnr": "FERRO_GUSA_TIPO_A",
+        "lfimg": 25.500,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "ARMAZEM_A3"
+      },
+      {
+        "vbeln_delivery": "0080099888",
+        "vgbel_order": "0010023456",
+        "matnr": "FERRO_GUSA_TIPO_A",
+        "lfimg": 15.000,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "ARMAZEM_A3"
+      }
+    ],
+    "vekp_units": [
+      {
+        "exidv": "CONT_998877",
+        "vbeln_delivery": "0080099887",
+        "vhilm": "CONT_40_HC",
+        "brgew": 32.000,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_998878",
+        "vbeln_delivery": "0080099888",
+        "vhilm": "CONT_20_STD",
+        "brgew": 21.500,
+        "gewei": "TO"
+      }
+    ]
+  }
+}
