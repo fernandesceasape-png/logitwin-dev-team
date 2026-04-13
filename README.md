@@ -30,5 +30,5 @@ O projeto está organizado para simular um ambiente de produção real:
 
 ## 👥 Governança e Time
 * **Product Owner:** Tarcísio Fernandes
-* **Equipe de Desenvolvimento:** Jordy Arlego, Luiza e Mai.
+* **Equipe de Desenvolvimento da Residência Tecnológica do Porto Digital:** Jordy Arlego, Luiza e Mai.
 * **Mentoria:** Rafael Rodrigues
