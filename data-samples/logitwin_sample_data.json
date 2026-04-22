@@ -7,6 +7,76 @@
         "kunnr": "PORTO_SUAPE_OPERADORA_A",
         "vstel": "GATE_01",
         "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023457",
+        "erdat": "2025-12-01",
+        "kunnr": "TERMINAL_PECAS_SUL",
+        "vstel": "GATE_02",
+        "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023458",
+        "erdat": "2026-03-15",
+        "kunnr": "ALUMINIO_NORDESTE_SA",
+        "vstel": "GATE_03",
+        "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023459",
+        "erdat": "2026-04-01",
+        "kunnr": "MINERACAO_VALE_DO_ACO",
+        "vstel": "GATE_01",
+        "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023460",
+        "erdat": "2026-04-05",
+        "kunnr": "ZINCO_INDUSTRIAL_CE",
+        "vstel": "GATE_04",
+        "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023461",
+        "erdat": "2025-10-15",
+        "kunnr": "ACO_ESPECIAL_TUBARAO",
+        "vstel": "GATE_02",
+        "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023462",
+        "erdat": "2026-04-10",
+        "kunnr": "NIQUEL_EXPORTACAO_RJ",
+        "vstel": "GATE_05",
+        "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023463",
+        "erdat": "2026-03-20",
+        "kunnr": "FERRO_LIGA_BAHIA",
+        "vstel": "GATE_01",
+        "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023464",
+        "erdat": "2026-03-28",
+        "kunnr": "TITANIO_AEROESPACIAL",
+        "vstel": "GATE_03",
+        "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023465",
+        "erdat": "2026-04-08",
+        "kunnr": "ALUMINIO_NORDESTE_SA",
+        "vstel": "GATE_02",
+        "waerk": "BRL"
+      },
+      {
+        "vbeln": "0010023466",
+        "erdat": "2026-01-10",
+        "kunnr": "COBRE_PARAUAPEBAS",
+        "vstel": "GATE_04",
+        "waerk": "BRL"
       }
     ],
     "lips_items": [
@@ -27,6 +97,240 @@
         "meins": "TO",
         "werks": "SUAPE_P1",
         "lgort": "ARMAZEM_A3"
+      },
+      {
+        "vbeln_delivery": "0080099901",
+        "vgbel_order": "0010023457",
+        "matnr": "FERRO_FUNDIDO_CINZENTO",
+        "lfimg": 18.200,
+        "meins": "TO",
+        "werks": "SUAPE_P2",
+        "lgort": "PATIO_B1"
+      },
+      {
+        "vbeln_delivery": "0080099902",
+        "vgbel_order": "0010023457",
+        "matnr": "FERRO_FUNDIDO_NODULAR",
+        "lfimg": 22.500,
+        "meins": "TO",
+        "werks": "SUAPE_P2",
+        "lgort": "PATIO_B1"
+      },
+      {
+        "vbeln_delivery": "0080099903",
+        "vgbel_order": "0010023457",
+        "matnr": "SUCATA_FERROSA_GRAU_1",
+        "lfimg": 9.800,
+        "meins": "TO",
+        "werks": "SUAPE_P2",
+        "lgort": "ARMAZEM_A1"
+      },
+      {
+        "vbeln_delivery": "0080099911",
+        "vgbel_order": "0010023458",
+        "matnr": "ALUMINIO_LINGOTE_P1020",
+        "lfimg": 30.000,
+        "meins": "TO",
+        "werks": "SUAPE_P3",
+        "lgort": "ARMAZEM_A5"
+      },
+      {
+        "vbeln_delivery": "0080099912",
+        "vgbel_order": "0010023458",
+        "matnr": "ALUMINIO_LIGA_6061",
+        "lfimg": 12.400,
+        "meins": "TO",
+        "werks": "SUAPE_P3",
+        "lgort": "ARMAZEM_A5"
+      },
+      {
+        "vbeln_delivery": "0080099921",
+        "vgbel_order": "0010023459",
+        "matnr": "COBRE_CATODO_GRAU_A",
+        "lfimg": 8.750,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "COFRE_C1"
+      },
+      {
+        "vbeln_delivery": "0080099922",
+        "vgbel_order": "0010023459",
+        "matnr": "COBRE_FIO_MAQUINA",
+        "lfimg": 14.200,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "COFRE_C1"
+      },
+      {
+        "vbeln_delivery": "0080099931",
+        "vgbel_order": "0010023460",
+        "matnr": "ZINCO_ESPECIAL_ALTO_GRAU",
+        "lfimg": 19.500,
+        "meins": "TO",
+        "werks": "SUAPE_P4",
+        "lgort": "ARMAZEM_D2"
+      },
+      {
+        "vbeln_delivery": "0080099932",
+        "vgbel_order": "0010023460",
+        "matnr": "ZINCO_LIGA_ZAMAK",
+        "lfimg": 7.300,
+        "meins": "TO",
+        "werks": "SUAPE_P4",
+        "lgort": "ARMAZEM_D2"
+      },
+      {
+        "vbeln_delivery": "0080099941",
+        "vgbel_order": "0010023461",
+        "matnr": "ACO_INOX_304",
+        "lfimg": 35.000,
+        "meins": "TO",
+        "werks": "SUAPE_P2",
+        "lgort": "PATIO_B3"
+      },
+      {
+        "vbeln_delivery": "0080099942",
+        "vgbel_order": "0010023461",
+        "matnr": "ACO_INOX_316L",
+        "lfimg": 28.600,
+        "meins": "TO",
+        "werks": "SUAPE_P2",
+        "lgort": "PATIO_B3"
+      },
+      {
+        "vbeln_delivery": "0080099943",
+        "vgbel_order": "0010023461",
+        "matnr": "ACO_CARBONO_SAE_1045",
+        "lfimg": 16.800,
+        "meins": "TO",
+        "werks": "SUAPE_P2",
+        "lgort": "ARMAZEM_A2"
+      },
+      {
+        "vbeln_delivery": "0080099944",
+        "vgbel_order": "0010023461",
+        "matnr": "BOBINA_ACO_GALVANIZADO",
+        "lfimg": 11.200,
+        "meins": "TO",
+        "werks": "SUAPE_P2",
+        "lgort": "ARMAZEM_A2"
+      },
+      {
+        "vbeln_delivery": "0080099951",
+        "vgbel_order": "0010023462",
+        "matnr": "NIQUEL_BRIQUETE_99_8",
+        "lfimg": 6.500,
+        "meins": "TO",
+        "werks": "SUAPE_P5",
+        "lgort": "COFRE_C2"
+      },
+      {
+        "vbeln_delivery": "0080099952",
+        "vgbel_order": "0010023462",
+        "matnr": "NIQUEL_CARBONILA_PELLET",
+        "lfimg": 4.200,
+        "meins": "TO",
+        "werks": "SUAPE_P5",
+        "lgort": "COFRE_C2"
+      },
+      {
+        "vbeln_delivery": "0080099961",
+        "vgbel_order": "0010023463",
+        "matnr": "FERRO_SILICIO_75",
+        "lfimg": 40.000,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "PATIO_C1"
+      },
+      {
+        "vbeln_delivery": "0080099962",
+        "vgbel_order": "0010023463",
+        "matnr": "FERRO_MANGANESO_78",
+        "lfimg": 32.500,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "PATIO_C1"
+      },
+      {
+        "vbeln_delivery": "0080099963",
+        "vgbel_order": "0010023463",
+        "matnr": "FERRO_CROMO_ALTO_CARBONO",
+        "lfimg": 21.000,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "PATIO_C2"
+      },
+      {
+        "vbeln_delivery": "0080099971",
+        "vgbel_order": "0010023464",
+        "matnr": "TITANIO_ESPONJA_GRAU_2",
+        "lfimg": 5.800,
+        "meins": "TO",
+        "werks": "SUAPE_P6",
+        "lgort": "COFRE_C3"
+      },
+      {
+        "vbeln_delivery": "0080099972",
+        "vgbel_order": "0010023464",
+        "matnr": "TITANIO_LIGA_Ti6Al4V",
+        "lfimg": 3.400,
+        "meins": "TO",
+        "werks": "SUAPE_P6",
+        "lgort": "COFRE_C3"
+      },
+      {
+        "vbeln_delivery": "0080099981",
+        "vgbel_order": "0010023465",
+        "matnr": "ALUMINIO_LINGOTE_T6",
+        "lfimg": 25.000,
+        "meins": "TO",
+        "werks": "SUAPE_P3",
+        "lgort": "ARMAZEM_A5"
+      },
+      {
+        "vbeln_delivery": "0080099982",
+        "vgbel_order": "0010023465",
+        "matnr": "ALUMINIO_CHAPA_5052",
+        "lfimg": 18.700,
+        "meins": "TO",
+        "werks": "SUAPE_P3",
+        "lgort": "ARMAZEM_A6"
+      },
+      {
+        "vbeln_delivery": "0080099983",
+        "vgbel_order": "0010023465",
+        "matnr": "ALUMINIO_PERFIL_6063",
+        "lfimg": 9.300,
+        "meins": "TO",
+        "werks": "SUAPE_P3",
+        "lgort": "ARMAZEM_A6"
+      },
+      {
+        "vbeln_delivery": "0080099991",
+        "vgbel_order": "0010023466",
+        "matnr": "COBRE_CATODO_LME_A",
+        "lfimg": 12.000,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "COFRE_C1"
+      },
+      {
+        "vbeln_delivery": "0080099992",
+        "vgbel_order": "0010023466",
+        "matnr": "COBRE_TUBO_DESENHO",
+        "lfimg": 8.600,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "COFRE_C1"
+      },
+      {
+        "vbeln_delivery": "0080099993",
+        "vgbel_order": "0010023466",
+        "matnr": "COBRE_BARRA_CHATA",
+        "lfimg": 6.400,
+        "meins": "TO",
+        "werks": "SUAPE_P1",
+        "lgort": "ARMAZEM_A1"
       }
     ],
     "vekp_units": [
@@ -42,6 +346,76 @@
         "vbeln_delivery": "0080099888",
         "vhilm": "CONT_20_STD",
         "brgew": 21.500,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100123",
+        "vbeln_delivery": "0080099911",
+        "vhilm": "CONT_40_HC",
+        "brgew": 36.800,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100124",
+        "vbeln_delivery": "0080099912",
+        "vhilm": "CONT_20_STD",
+        "brgew": 18.900,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100131",
+        "vbeln_delivery": "0080099931",
+        "vhilm": "CONT_40_STD",
+        "brgew": 24.200,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100132",
+        "vbeln_delivery": "0080099932",
+        "vhilm": "CONT_20_STD",
+        "brgew": 12.700,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100161",
+        "vbeln_delivery": "0080099961",
+        "vhilm": "CONT_40_HC",
+        "brgew": 45.500,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100162",
+        "vbeln_delivery": "0080099962",
+        "vhilm": "CONT_40_HC",
+        "brgew": 38.200,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100163",
+        "vbeln_delivery": "0080099963",
+        "vhilm": "CONT_20_STD",
+        "brgew": 26.500,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100181",
+        "vbeln_delivery": "0080099981",
+        "vhilm": "CONT_40_HC",
+        "brgew": 31.000,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100182",
+        "vbeln_delivery": "0080099982",
+        "vhilm": "CONT_20_STD",
+        "brgew": 24.400,
+        "gewei": "TO"
+      },
+      {
+        "exidv": "CONT_100183",
+        "vbeln_delivery": "0080099983",
+        "vhilm": "CONT_20_STD",
+        "brgew": 14.800,
         "gewei": "TO"
       }
     ]
