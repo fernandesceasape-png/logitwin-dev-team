@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import type { Order, OrderStatus } from "@/types";
-import { formatWeight, getPendingAlertLevel, getPendingDays } from "@/lib/stats";
+import { formatWeight, getPendingAlertLevel, getPendingDays, type AlertLevel } from "@/lib/stats";
 
 interface OrdersTableProps {
   orders: Order[];
@@ -63,9 +63,10 @@ function TableRow({ order, onClick }: { order: Order; onClick?: () => void }) {
   const rowClass = clsx(
     "transition-colors",
     onClick && "cursor-pointer",
-    alertLevel === "critical" && "bg-red-50 hover:bg-red-100",
-    alertLevel === "warning"  && "bg-amber-50 hover:bg-amber-100",
-    alertLevel === "none"     && "hover:bg-slate-50",
+    alertLevel === "critical"    && "bg-red-50 hover:bg-red-100",
+    alertLevel === "approaching" && "bg-orange-50 hover:bg-orange-100",
+    alertLevel === "warning"     && "bg-amber-50 hover:bg-amber-100",
+    alertLevel === "none"        && "hover:bg-slate-50",
   );
 
   return (
@@ -76,7 +77,9 @@ function TableRow({ order, onClick }: { order: Order; onClick?: () => void }) {
           {alertLevel !== "none" && (
             <span className={clsx(
               "w-2 h-2 rounded-full flex-shrink-0 animate-pulse",
-              alertLevel === "critical" ? "bg-red-500" : "bg-amber-400",
+              alertLevel === "critical"    ? "bg-red-500"    :
+              alertLevel === "approaching" ? "bg-orange-500" :
+              "bg-amber-400",
             )} />
           )}
           <span className="font-mono text-[12px] text-slate-700">
@@ -92,7 +95,9 @@ function TableRow({ order, onClick }: { order: Order; onClick?: () => void }) {
           {alertLevel !== "none" && (
             <span className={clsx(
               "text-[10px] font-semibold",
-              alertLevel === "critical" ? "text-red-600" : "text-amber-600",
+              alertLevel === "critical"    ? "text-red-600"    :
+              alertLevel === "approaching" ? "text-orange-600" :
+              "text-amber-600",
             )}>
               {pendingDays}d parado
             </span>
@@ -169,11 +174,12 @@ const statusMap: Record<OrderStatus, { label: string; className: string }> = {
   pending:      { label: "Pendente",    className: "bg-amber-50 text-amber-700" },
 };
 
-function InlineStatusBadge({ status, alertLevel }: { status: OrderStatus; alertLevel: "none" | "warning" | "critical" }) {
+function InlineStatusBadge({ status, alertLevel }: { status: OrderStatus; alertLevel: AlertLevel }) {
   const { label, className } = statusMap[status];
   const urgentClass =
-    alertLevel === "critical" ? "bg-red-100 text-red-700 animate-pulse" :
-    alertLevel === "warning"  ? "bg-amber-100 text-amber-800" :
+    alertLevel === "critical"    ? "bg-red-100 text-red-700 animate-pulse" :
+    alertLevel === "approaching" ? "bg-orange-100 text-orange-700"          :
+    alertLevel === "warning"     ? "bg-amber-100 text-amber-800"           :
     className;
 
   return (

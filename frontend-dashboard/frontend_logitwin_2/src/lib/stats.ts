@@ -107,18 +107,34 @@ export function getPendingDays(order: Order): number {
   return Math.floor((now.getTime() - created.getTime()) / (1000 * 60 * 60 * 24));
 }
 
+export type AlertLevel = "none" | "warning" | "approaching" | "critical";
+
 /**
  * Retorna o nível de alerta para um pedido pendente baseado em sua idade:
- * - "none"     → pedido não é pendente ou tem < 7 dias
- * - "warning"  → pendente há 7–29 dias (atenção)
- * - "critical" → pendente há 30+ dias (ação imediata)
+ * - "none"        → pedido não é pendente ou tem < 7 dias
+ * - "warning"     → pendente há 7–14 dias (atenção)
+ * - "approaching" → pendente há 15–29 dias (próximo do crítico — agir proativamente)
+ * - "critical"    → pendente há 30+ dias (ação imediata)
  */
-export function getPendingAlertLevel(order: Order): "none" | "warning" | "critical" {
+export function getPendingAlertLevel(order: Order): AlertLevel {
   const days = getPendingDays(order);
   if (days === 0) return "none";
   if (days >= 30) return "critical";
+  if (days >= 15) return "approaching";
   if (days >= 7) return "warning";
   return "none";
+}
+
+/**
+ * Pedidos próximos do nível crítico — janela 15-29 dias.
+ * Usado pelo painel de Aging para ação preventiva.
+ */
+export function getApproachingOrders(orders: Order[]): Order[] {
+  return orders.filter(o => getPendingAlertLevel(o) === "approaching");
+}
+
+export function getCriticalOrders(orders: Order[]): Order[] {
+  return orders.filter(o => getPendingAlertLevel(o) === "critical");
 }
 
 /** Top pedidos por peso */

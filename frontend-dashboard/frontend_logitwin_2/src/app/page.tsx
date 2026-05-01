@@ -9,6 +9,9 @@ import { WeightChart } from "@/components/dashboard/WeightChart";
 import { LocationDistribution } from "@/components/dashboard/LocationDistribution";
 import { StatusBanner } from "@/components/ui/StatusBanner";
 import { OrderDetailModal } from "@/components/dashboard/OrderDetailModal";
+import { SapSyncPanel } from "@/components/dashboard/SapSyncPanel";
+import { ContainerSuggestionsPanel } from "@/components/dashboard/ContainerSuggestionsPanel";
+import { BacklogExportButton } from "@/components/dashboard/BacklogExportButton";
 import { useOrders } from "@/hooks/useOrders";
 import type { Order } from "@/types";
 import { getPendingAlertLevel } from "@/lib/stats";
@@ -32,10 +35,17 @@ export default function DashboardPage() {
 
   // Contagem de alertas para exibir resumo
   const alertCounts = useMemo(() => {
-    const critical = orders.filter((o) => getPendingAlertLevel(o) === "critical").length;
-    const warning  = orders.filter((o) => getPendingAlertLevel(o) === "warning").length;
-    return { critical, warning };
+    const critical    = orders.filter((o) => getPendingAlertLevel(o) === "critical").length;
+    const approaching = orders.filter((o) => getPendingAlertLevel(o) === "approaching").length;
+    const warning     = orders.filter((o) => getPendingAlertLevel(o) === "warning").length;
+    return { critical, approaching, warning };
   }, [orders]);
+
+  // Pedidos no escopo do relatório de backlog (todos com algum nível de aging)
+  const backlogOrders = useMemo(
+    () => orders.filter((o) => getPendingAlertLevel(o) !== "none"),
+    [orders]
+  );
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -62,16 +72,32 @@ export default function DashboardPage() {
             <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse flex-shrink-0" />
             <p className="text-sm text-red-700 font-semibold">
               {alertCounts.critical} pedido(s) com status <strong>CRÍTICO</strong> — pendente há mais de 30 dias.
+              {alertCounts.approaching > 0 && ` ${alertCounts.approaching} aproximando-se do limite.`}
               {alertCounts.warning > 0 && ` Mais ${alertCounts.warning} requer(em) atenção.`}
             </p>
           </div>
         )}
-        {!loading && alertCounts.critical === 0 && alertCounts.warning > 0 && (
+        {!loading && alertCounts.critical === 0 && alertCounts.approaching > 0 && (
+          <div className="mb-4 flex items-center gap-3 bg-orange-50 border border-orange-300 rounded-xl px-4 py-3">
+            <span className="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse flex-shrink-0" />
+            <p className="text-sm text-orange-800 font-semibold">
+              <strong>AGING:</strong> {alertCounts.approaching} pedido(s) próximo(s) do limite crítico (15-29 dias) — aja proativamente para evitar prejuízos.
+            </p>
+          </div>
+        )}
+        {!loading && alertCounts.critical === 0 && alertCounts.approaching === 0 && alertCounts.warning > 0 && (
           <div className="mb-4 flex items-center gap-3 bg-amber-50 border border-amber-300 rounded-xl px-4 py-3">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse flex-shrink-0" />
             <p className="text-sm text-amber-800 font-semibold">
               {alertCounts.warning} pedido(s) pendente(s) há mais de 7 dias — verifique a situação.
             </p>
+          </div>
+        )}
+
+        {/* ── Painel de monitoramento SAP ───────────────────────────── */}
+        {!loading && (
+          <div className="mb-6 animate-fade-in">
+            <SapSyncPanel />
           </div>
         )}
 
@@ -96,7 +122,7 @@ export default function DashboardPage() {
               {/* ── Coluna de pedidos ──────────────────────────────── */}
               <div>
                 {/* Header da seção */}
-                <div className="flex items-end justify-between mb-4">
+                <div className="flex items-end justify-between mb-4 gap-3 flex-wrap">
                   <div>
                     <h2 className="text-lg font-semibold text-slate-900 tracking-tight">
                       Pedidos Ativos
@@ -108,20 +134,25 @@ export default function DashboardPage() {
                     </p>
                   </div>
 
-                  {/* Toggle de visualização */}
-                  <div className="flex gap-1 bg-slate-200 rounded-lg p-1">
-                    {(["cards", "table"] as ViewMode[]).map((v) => (
-                      <button
-                        key={v}
-                        onClick={() => setView(v)}
-                        className={`px-3 py-1.5 text-sm font-medium rounded-md transition-all ${view === v
-                            ? "bg-white text-slate-900 shadow-sm"
-                            : "text-slate-600 hover:text-slate-800"
-                          }`}
-                      >
-                        {v === "cards" ? "Cards" : "Tabela"}
-                      </button>
-                    ))}
+                  <div className="flex items-center gap-2">
+                    {/* Export do backlog */}
+                    <BacklogExportButton orders={backlogOrders} />
+
+                    {/* Toggle de visualização */}
+                    <div className="flex gap-1 bg-slate-200 rounded-lg p-1">
+                      {(["cards", "table"] as ViewMode[]).map((v) => (
+                        <button
+                          key={v}
+                          onClick={() => setView(v)}
+                          className={`px-3 py-1.5 text-sm font-medium rounded-md transition-all ${view === v
+                              ? "bg-white text-slate-900 shadow-sm"
+                              : "text-slate-600 hover:text-slate-800"
+                            }`}
+                        >
+                          {v === "cards" ? "Cards" : "Tabela"}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
@@ -198,6 +229,11 @@ export default function DashboardPage() {
                 <LocationDistribution orders={orders} />
               </aside>
 
+            </div>
+
+            {/* ── Inteligência Logística ─────────────────────────────── */}
+            <div className="mt-6 animate-fade-in">
+              <ContainerSuggestionsPanel />
             </div>
           </>
         )}

@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import type { Order, OrderStatus } from "@/types";
-import { formatWeight, formatDate, getPendingAlertLevel, getPendingDays } from "@/lib/stats";
+import { formatWeight, formatDate, getPendingAlertLevel, getPendingDays, type AlertLevel } from "@/lib/stats";
 
 interface OrderCardProps {
   order: Order;
@@ -12,8 +12,9 @@ export function OrderCard({ order, onClick }: OrderCardProps) {
   const pendingDays = getPendingDays(order);
 
   const borderClass =
-    alertLevel === "critical" ? "border-red-400 shadow-red-100" :
-    alertLevel === "warning"  ? "border-amber-400 shadow-amber-100" :
+    alertLevel === "critical"    ? "border-red-400 shadow-red-100"     :
+    alertLevel === "approaching" ? "border-orange-400 shadow-orange-100" :
+    alertLevel === "warning"     ? "border-amber-400 shadow-amber-100" :
     "border-slate-200";
 
   return (
@@ -29,25 +30,31 @@ export function OrderCard({ order, onClick }: OrderCardProps) {
       {alertLevel !== "none" && (
         <div className={clsx(
           "flex items-center gap-2 px-4 py-2 text-[11px] font-semibold",
-          alertLevel === "critical" && "bg-red-500 text-white",
-          alertLevel === "warning"  && "bg-amber-400 text-amber-900",
+          alertLevel === "critical"    && "bg-red-500 text-white",
+          alertLevel === "approaching" && "bg-orange-500 text-white",
+          alertLevel === "warning"     && "bg-amber-400 text-amber-900",
         )}>
           {/* Ponto piscante */}
           <span className={clsx(
             "w-2 h-2 rounded-full flex-shrink-0",
-            alertLevel === "critical" ? "bg-white animate-pulse" : "bg-amber-700 animate-pulse",
+            alertLevel === "critical"    ? "bg-white animate-pulse" :
+            alertLevel === "approaching" ? "bg-white animate-pulse" :
+            "bg-amber-700 animate-pulse",
           )} />
           {alertLevel === "critical"
             ? `CRITICO — Pendente há ${pendingDays} dias`
-            : `ATENCAO — Pendente há ${pendingDays} dias`}
+            : alertLevel === "approaching"
+              ? `AGING — ${pendingDays} dias (faltam ${30 - pendingDays} para crítico)`
+              : `ATENCAO — Pendente há ${pendingDays} dias`}
         </div>
       )}
 
       {/* ── Cabeçalho ─────────────────────────────────────────────────── */}
       <div className={clsx(
         "flex items-center justify-between px-4 py-3 border-b",
-        alertLevel === "critical" ? "bg-red-50 border-red-100" :
-        alertLevel === "warning"  ? "bg-amber-50 border-amber-100" :
+        alertLevel === "critical"    ? "bg-red-50 border-red-100"     :
+        alertLevel === "approaching" ? "bg-orange-50 border-orange-100" :
+        alertLevel === "warning"     ? "bg-amber-50 border-amber-100" :
         "bg-slate-50 border-slate-100",
       )}>
         <div className="flex items-center gap-2">
@@ -223,11 +230,12 @@ const statusConfig: Record<OrderStatus, { label: string; className: string }> = 
   },
 };
 
-function StatusBadge({ status, alertLevel }: { status: OrderStatus; alertLevel: "none" | "warning" | "critical" }) {
+function StatusBadge({ status, alertLevel }: { status: OrderStatus; alertLevel: AlertLevel }) {
   const { label, className } = statusConfig[status];
   const urgentClass =
-    alertLevel === "critical" ? "bg-red-100 text-red-700 border-red-300 animate-pulse" :
-    alertLevel === "warning"  ? "bg-amber-100 text-amber-800 border-amber-300" :
+    alertLevel === "critical"    ? "bg-red-100 text-red-700 border-red-300 animate-pulse"  :
+    alertLevel === "approaching" ? "bg-orange-100 text-orange-700 border-orange-300"        :
+    alertLevel === "warning"     ? "bg-amber-100 text-amber-800 border-amber-300"           :
     className;
 
   return (

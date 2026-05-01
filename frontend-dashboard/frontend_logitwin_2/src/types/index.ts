@@ -62,3 +62,57 @@ export interface ApiResponse<T> {
   error: string | null;
   loading: boolean;
 }
+
+// ─── SAP Sync Status ─────────────────────────────────────────────────────────
+
+export interface SapTableStatus {
+  name: string;
+  description: string;
+  records: number;
+  latencyMs: number;
+  status: "online" | "degraded" | "offline";
+}
+
+export interface SapSyncStatus {
+  connection: {
+    system: string;
+    host: string;
+    client: string;
+    status: "connected" | "degraded" | "disconnected";
+    lastSync: string;
+    avgLatencyMs: number;
+    totalRecords: number;
+  };
+  tables: SapTableStatus[];
+}
+
+// ─── Container Allocation Suggestions ────────────────────────────────────────
+
+export interface ContainerCandidate {
+  containerId: string;
+  type: string;
+  currentLocation: string;
+  remainingCapacity: number;
+  distanceUnits: number;
+  fits: boolean;
+  score: number;
+}
+
+export interface ContainerSuggestion {
+  delivery: {
+    id: string;
+    orderId: string;
+    material: string;
+    weight: number;
+    location: string;
+  };
+  candidates: ContainerCandidate[];
+  bestMatch: ContainerCandidate | null;
+}
+
+export interface ContainerSuggestionsResponse {
+  generatedAt: string;
+  totalPendingDeliveries: number;
+  totalActiveContainers: number;
+  suggestions: ContainerSuggestion[];
+}
