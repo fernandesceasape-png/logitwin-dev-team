@@ -10,6 +10,7 @@ O **LogiTwin** é uma solução de Gêmeo Digital de alto impacto, validada pelo
 
 
 📺 Vídeo completo da demonstração:
+
 https://www.youtube.com/watch?v=bnDIuSrNgz0
 
 ## 📌 O Problema
