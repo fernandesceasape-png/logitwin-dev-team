@@ -4,6 +4,10 @@
 
 O **LogiTwin** é uma solução de Gêmeo Digital de alto impacto, validada pelo **Programa Centelha (Nota 4.20)** e acelerada globalmente pela **Fundação Wadhwani (Ignite)**. Nosso propósito é eliminar a "invisibilidade" entre os sistemas de gestão (ERP) e a operação física do pátio logístico.
 
+🎥 Demonstração do Sistema
+
+<img width="800" height="342" alt="LogiTwin-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/66382dde-2f31-496d-846c-693070f4aac1" />
+
 ## 📌 O Problema
 No dia a dia logístico, existe um gap crítico entre o dado sistêmico e a realidade do pátio. Gestores muitas vezes não possuem visibilidade imediata de cargas paradas, atrasos de faturamento por falta de unidades de manuseio ou gargalos de SLA que impactam o custo operacional.
 
@@ -52,5 +56,9 @@ Acesse: **http://localhost:3000**
 
 ## 👥 Governança e Time
 * **Product Owner:** Tarcísio Fernandes
-* **Equipe de Desenvolvimento da Residência Tecnológica do Porto Digital:** Jordy Arlego, Luiza e Mai.
+* **Equipe de Desenvolvimento da Residência Tecnológica do Porto Digital:** Maísa Letícia, Manoel Rodrigues, Jordy Arlego e Luiza.
 * **Mentoria:** Rafael Rodrigues
+  
+📺 Vídeo completo da demonstração:
+
+https://www.youtube.com/watch?v=bnDIuSrNgz0
