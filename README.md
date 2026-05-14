@@ -8,6 +8,10 @@ O **LogiTwin** é uma solução de Gêmeo Digital de alto impacto, validada pelo
 
 <img width="800" height="342" alt="LogiTwin-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/66382dde-2f31-496d-846c-693070f4aac1" />
 
+📺 Vídeo completo da demonstração:
+
+https://www.youtube.com/watch?v=bnDIuSrNgz0
+
 ## 📌 O Problema
 No dia a dia logístico, existe um gap crítico entre o dado sistêmico e a realidade do pátio. Gestores muitas vezes não possuem visibilidade imediata de cargas paradas, atrasos de faturamento por falta de unidades de manuseio ou gargalos de SLA que impactam o custo operacional.
 
@@ -58,7 +62,3 @@ Acesse: **http://localhost:3000**
 * **Product Owner:** Tarcísio Fernandes
 * **Equipe de Desenvolvimento da Residência Tecnológica do Porto Digital:** Maísa Letícia, Manoel Rodrigues, Jordy Arlego e Luiza.
 * **Mentoria:** Rafael Rodrigues
-  
-📺 Vídeo completo da demonstração:
-
-https://www.youtube.com/watch?v=bnDIuSrNgz0
