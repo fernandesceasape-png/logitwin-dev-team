@@ -8,8 +8,8 @@ O **LogiTwin** é uma solução de Gêmeo Digital de alto impacto, validada pelo
 
 <img width="800" height="342" alt="LogiTwin-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/66382dde-2f31-496d-846c-693070f4aac1" />
 
-📺 Vídeo completo da demonstração:
 
+📺 Vídeo completo da demonstração:
 https://www.youtube.com/watch?v=bnDIuSrNgz0
 
 ## 📌 O Problema
