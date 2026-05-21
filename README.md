@@ -39,7 +39,7 @@ O projeto está organizado para simular um ambiente de produção real:
 
 ## ▶️ Como Rodar o Projeto
 
-Você vai precisar de **Node.js 18+** instalado. Abra **dois terminais**.
+Você vai precisar de **Node.js 18+** instalado e VSCode para abrir o projeto. Abra **dois terminais**.
 
 **Terminal 1 — Backend**
 ```bash
@@ -61,5 +61,5 @@ Acesse: **http://localhost:3000**
 
 ## 👥 Governança e Time
 * **Product Owner:** Tarcísio Fernandes
-* **Equipe de Desenvolvimento da Residência Tecnológica do Porto Digital:** Maísa Letícia, Manoel Rodrigues, Jordy Arlego e Luiza.
+* **Equipe de Desenvolvimento da Residência Tecnológica do Porto Digital:** Maísa Letícia, Manoel Rodrigues, Jordy Arlego e  Maria Luiza.
 * **Mentoria:** Rafael Rodrigues
